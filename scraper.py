@@ -5,9 +5,11 @@ page = urlopen(Request(pageToScrape, headers={'User-Agent': 'Mozilla'}))
 soup = BeautifulSoup(page, 'html.parser')
 h1 = soup.find('table', attrs={'summary':'Parking Structure 4'})
 h1Text = h1.tbody # this will contain each entry in the table for a single parking structure
-#print(h1Text.contents)
-#print('hello')
 x = 0
 for child in h1Text:
     if hasattr(child,'attrs'):
-        print(list(child.td.next_sibling.next_sibling.next_sibling.next_sibling.children))
+        numSpace = str(child.td.next_sibling.next_sibling.next_sibling.next_sibling.contents[0])
+        if numSpace[0] == '<':
+            print(0)
+        else:
+            print(numSpace)
