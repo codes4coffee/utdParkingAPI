@@ -8,8 +8,9 @@ then outputs the data as a json styled list for easier consumption.
 Python 3 is required to run this script
 
 ## Installation
-git clone https://github.com/codes4coffee/utdAPIcd  utdAPI
-  pip install -r requirements.txt
+git clone https://github.com/codes4coffee/utdAPI <br />
+cd utdAPI <br />
+pip install -r requirements.txt
 
 # Run
 python scraper.py
