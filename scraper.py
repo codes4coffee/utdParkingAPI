@@ -8,7 +8,7 @@ parkingStructures = ['Parking Structure 1', 'Parking Structure 3', 'Parking Stru
 finalList = []
 #List the amount of spots for every parking structure 1 - 4
 for structure in parkingStructures:
-    jsonObj = {'structure': structure}
+    jsonObj = {'structure': structure} #Will hold the final returned JSON
     print(structure)
     parkingTable = soup.find('table', attrs={'summary':structure})
     tableData = parkingTable.tbody # this will contain each entry in the table for a single parking structure
