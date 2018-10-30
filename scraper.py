@@ -14,7 +14,6 @@ for structure in parkingStructures:
     tableData = parkingTable.tbody # this will contain each entry in the table for a single parking structure
     for child in tableData:
         if hasattr(child,'attrs'):
-
             color = str(child.td.next_sibling.next_sibling)[11:] #Get the permit type of the space and strip out the type from the html tag
             color = color[:color.find('"')]
 
