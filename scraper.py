@@ -5,10 +5,14 @@ pageToScrape = 'https://www.utdallas.edu/shop/parking/_code.php'
 page = urlopen(Request(pageToScrape, headers={'User-Agent': 'Mozilla'}))
 soup = BeautifulSoup(page, 'html.parser')
 parkingStructures = ['Parking Structure 1', 'Parking Structure 3', 'Parking Structure 4']
+parkingStructuresShort = ['PS1', 'PS3', 'PS4']
 finalList = []
+index = 0
 #List the amount of spots for every parking structure 1 - 4
 for structure in parkingStructures:
     jsonObj = {'structure': structure}
+    jsonObj[shortName] = parkingStructuresShort[index]
+    index += 1
     print(structure)
     parkingTable = soup.find('table', attrs={'summary':structure})
     tableData = parkingTable.tbody # this will contain each entry in the table for a single parking structure
