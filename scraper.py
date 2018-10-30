@@ -17,17 +17,12 @@ for structure in parkingStructures:
 
             color = str(child.td.next_sibling.next_sibling)[11:] #Get the permit type of the space and strip out the type from the html tag
             color = color[:color.find('"')]
-            print(color)
 
             numSpace = str(child.td.next_sibling.next_sibling.next_sibling.next_sibling.contents[0])
             if numSpace[0] == '<':
                 print(0)
                 jsonObj[color] = 0
             else:
-                print(numSpace)
                 jsonObj[color] = int(numSpace)
     finalList.append(jsonObj)
-    print(json.dumps(jsonObj))
-    print('\n')
 
-print(json.dumps(finalList))
