@@ -6,7 +6,7 @@ page = urlopen(Request(pageToScrape, headers={'User-Agent': 'Mozilla'}))
 soup = BeautifulSoup(page, 'html.parser')
 parkingStructures = ['Parking Structure 1', 'Parking Structure 3', 'Parking Structure 4']
 finalList = []
-#List the amount of spots for every parking structure 1 - 4
+#List the amount of spots for every parking structure 1, 3, 4
 for structure in parkingStructures:
     jsonObj = {'structure': structure}
     print(structure)
